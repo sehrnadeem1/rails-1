@@ -24,10 +24,10 @@
   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
 </div>
 <div class="btn-group">
-		<%= link_to 'Items', items_path, class: 'btn btn-default' %>
-		<%= link_to 'Orders', user_orders_path(current_user), class: 'btn btn-default' %>
+    <%= link_to 'Items', items_path, class: 'btn btn-default' %>
+    <%= link_to 'Orders', user_orders_path(current_user), class: 'btn btn-default' %>
   <% if current_user.admin? %>
-  	<%= link_to 'Waiters', waiters_path, class: 'btn btn-default' %>
+    <%= link_to 'Waiters', waiters_path, class: 'btn btn-default' %>
   <% end %>
 <% else %>
   <%= link_to 'Login', new_user_session_path, class: 'btn btn-default' %>

@@ -44329,3 +44329,842 @@ Processing by OrdersController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
   Rendered orders/index.html.erb within layouts/application (12.7ms)
 Completed 200 OK in 38ms (Views: 24.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-11-20 15:01:11 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.5ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.8ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.9ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:01:16 +0500
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 197ms (Views: 184.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-20 15:01:19 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+NVs0JH7qCMarHb5Ia6e5POclkcNUIFMolugWWwttFDO1W2mY1kCE75grYDVkNtOtpI2ViU6Rm4Bbr8KrBFHmQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:01:19 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (13.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-20 15:08:40 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hBXrx+vYBKyXqbEcXFQsaoVYZ9+4cdKDhVHqnx0xbrssj1BYYtJblc3dt8XsCMBZa8SSXba6eJBakFygFeNclQ==", "user"=>{"email"=>"sehrnadeem91@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sehrnadeem91@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-11-20 06:58:52.000000', `current_sign_in_at` = '2017-11-20 10:08:40.876166', `sign_in_count` = 33, `updated_at` = '2017-11-20 10:08:40.877197' WHERE `users`.`id` = 1[0m
+  [1m[35m (62.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 146ms (ActiveRecord: 63.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:08:40 +0500
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 83ms (Views: 73.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/orders" for 127.0.0.1 at 2017-11-20 15:08:44 +0500
+Processing by OrdersController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT `orders`.* FROM `orders`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered orders/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 54ms (Views: 36.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/order/9/order_items" for 127.0.0.1 at 2017-11-20 15:08:47 +0500
+Processing by OrderItemsController#index as HTML
+  Parameters: {"order_id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 9 LIMIT 1
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 9[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 11 LIMIT 1
+  Rendered order_items/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 43ms (Views: 22.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/order/9/order_items/new" for 127.0.0.1 at 2017-11-20 15:08:48 +0500
+Processing by OrderItemsController#new as HTML
+  Parameters: {"order_id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 9 LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered order_items/_form.html.erb (3.7ms)
+  Rendered order_items/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 36ms (Views: 19.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/order/9/order_items" for 127.0.0.1 at 2017-11-20 15:08:59 +0500
+Processing by OrderItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "order_item"=>{"item_id"=>"1", "quantity"=>"1"}, "commit"=>"Create Order item", "order_id"=>"9"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.0) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.0) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  devise (3.4.1) lib/devise/controllers/helpers.rb:251:in `handle_unverified_request'
+  actionpack (4.2.0) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:163:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:163:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.8) lib/rack/etag.rb:24:in `call'
+  rack (1.6.8) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.8) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.1ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:09:19 +0500
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/orders" for 127.0.0.1 at 2017-11-20 15:09:22 +0500
+Processing by OrdersController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT `orders`.* FROM `orders`
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered orders/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 43ms (Views: 28.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/order/4/order_items" for 127.0.0.1 at 2017-11-20 15:09:24 +0500
+Processing by OrderItemsController#index as HTML
+  Parameters: {"order_id"=>"4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 4
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 10 LIMIT 1[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1  [["id", 9]]
+  Rendered order_items/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 38ms (Views: 19.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/order/4/order_items/new" for 127.0.0.1 at 2017-11-20 15:09:26 +0500
+Processing by OrderItemsController#new as JS
+  Parameters: {"order_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered order_items/_form.html.erb (4.0ms)
+  Rendered order_items/new.js.erb (5.3ms)
+Completed 200 OK in 23ms (Views: 7.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/order/4/order_items" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+Processing by OrderItemsController#create as JS
+  Parameters: {"utf8"=>"✓", "order_item"=>{"item_id"=>"1", "quantity"=>"1"}, "commit"=>"Create Order item", "order_id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `order_items` (`item_id`, `quantity`, `order_id`, `created_at`, `updated_at`) VALUES (1, 1, 4, '2017-11-20 10:09:33.325594', '2017-11-20 10:09:33.325594')
+  [1m[36m (43.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE `items` SET `quantity` = 4, `updated_at` = '2017-11-20 10:09:33.373646' WHERE `items`.`id` = 1[0m
+  [1m[35m (34.4ms)[0m  COMMIT
+  Rendered order_items/create.js.erb (1.3ms)
+Completed 200 OK in 112ms (Views: 9.7ms | ActiveRecord: 79.8ms)
+
+
+Started GET "/order/4/order_items" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+Processing by OrderItemsController#index as HTML
+  Parameters: {"order_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1
+  [1m[36mOrderItem Load (0.2ms)[0m  [1mSELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 4[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 10 LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1[0m  [["id", 9]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 1 LIMIT 1
+  Rendered order_items/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 33ms (Views: 21.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/order_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/waiter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/order_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/waiter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for 127.0.0.1 at 2017-11-20 15:09:33 +0500
+
+
+Started GET "/order/4/order_items/new" for 127.0.0.1 at 2017-11-20 15:55:26 +0500
+Processing by OrderItemsController#new as JS
+  Parameters: {"order_id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.5ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered order_items/_form.html.erb (2.8ms)
+  Rendered order_items/new.js.erb (3.7ms)
+Completed 200 OK in 22ms (Views: 6.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/order/4/order_items" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+Processing by OrderItemsController#index as HTML
+  Parameters: {"order_id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 4
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 10 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1  [["id", 9]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 1 LIMIT 1[0m
+  Rendered order_items/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 81ms (Views: 68.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/order_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/waiter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/order_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/waiter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:31 +0500
+
+
+Started GET "/order/4/order_items/new" for 127.0.0.1 at 2017-11-20 15:55:34 +0500
+Processing by OrderItemsController#new as HTML
+  Parameters: {"order_id"=>"4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mOrder Load (0.6ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered order_items/_form.html.erb (2.0ms)
+  Rendered order_items/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 36ms (Views: 18.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/order/4/order_items" for 127.0.0.1 at 2017-11-20 15:55:39 +0500
+Processing by OrderItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "order_item"=>{"item_id"=>"1", "quantity"=>"1"}, "commit"=>"Create Order item", "order_id"=>"4"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 2ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.0) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.0) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  devise (3.4.1) lib/devise/controllers/helpers.rb:251:in `handle_unverified_request'
+  actionpack (4.2.0) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:163:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:163:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.8) lib/rack/etag.rb:24:in `call'
+  rack (1.6.8) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.8) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.9ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sehr/.rvm/gems/ruby-2.2.4@railsVersion/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.7ms)
+
+
+Started GET "/order/4/order_items" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+Processing by OrderItemsController#index as HTML
+  Parameters: {"order_id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1
+  [1m[36mOrderItem Load (0.4ms)[0m  [1mSELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 4[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 10 LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1[0m  [["id", 9]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 1 LIMIT 1
+  Rendered order_items/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 34ms (Views: 17.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/waiter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/order_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/order_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/waiter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for 127.0.0.1 at 2017-11-20 15:55:55 +0500
+
+
+Started GET "/order/4/order_items/new" for 127.0.0.1 at 2017-11-20 15:55:57 +0500
+Processing by OrderItemsController#new as JS
+  Parameters: {"order_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered order_items/_form.html.erb (2.3ms)
+  Rendered order_items/new.js.erb (3.0ms)
+Completed 200 OK in 16ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/order/4/order_items" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+Processing by OrderItemsController#index as HTML
+  Parameters: {"order_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 4
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 10 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 9 LIMIT 1  [["id", 9]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 1 LIMIT 1[0m
+  Rendered order_items/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 53ms (Views: 25.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/order_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/waiter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/order_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/waiter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for 127.0.0.1 at 2017-11-20 16:05:05 +0500
+
+
+Started GET "/waiters" for 127.0.0.1 at 2017-11-20 16:05:35 +0500
+Processing by WaitersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`role_id` = 2[0m
+  Rendered waiters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-20 16:05:37 +0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-20 16:05:43 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dAW5LlJAoejkEeSAH1Q0POgPOIN1iWKPBkyjQr+4ct3MRE4m3I/gP8y/41gJZsyY26uy+fnYBYR+W+0jzc1AKQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:05:43 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-20 16:05:49 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qi5CHsOZhRCCXgjNUgt5FL/DdMiHAazaXOoumbWMqVmDTa3l44pfvbHCUiyOlvxsEiqnbJOifLLYqqwudK9SvA==", "user"=>{"email"=>"sehrnadeem91@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sehrnadeem91@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2017-11-20 10:08:41.000000', `current_sign_in_at` = '2017-11-20 11:05:49.424642', `sign_in_count` = 34, `updated_at` = '2017-11-20 11:05:49.425562' WHERE `users`.`id` = 1
+  [1m[36m (53.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 130ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:05:49 +0500
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/waiters" for 127.0.0.1 at 2017-11-20 16:05:51 +0500
+Processing by WaitersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`role_id` = 2[0m
+  Rendered waiters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-20 16:05:53 +0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-11-20 16:06:16 +0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J483Wy8JWIvOjunUaocfzYt38QApcByhfKRAneh2l8pd2SsLJulRqHVqAJWzDZzeBpU2sR7QcGuJAr9GHPkovw==", "user"=>{"email"=>"abc+1@example.com", "name"=>"waiter 7", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Add Waiter"}
+Unpermitted parameter: password_confirmation
+Unpermitted parameter: password_confirmation
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'abc+1@example.com' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = '56b18402feb70879fb530ce696646fc8990f3ecb60d38bfd42b5aed5a6443b09'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`email`, `name`, `encrypted_password`, `created_at`, `updated_at`, `confirmation_token`, `confirmation_sent_at`) VALUES ('abc+1@example.com', 'waiter 7', '$2a$10$2hm4MYw.rEHze7ez70.kXeQli0lGQkFoxomyLYLyKYSABsntxqZm.', '2017-11-20 11:06:16.140853', '2017-11-20 11:06:16.140853', '56b18402feb70879fb530ce696646fc8990f3ecb60d38bfd42b5aed5a6443b09', '2017-11-20 11:06:16.300511')
+  Rendered devise/mailer/confirmation_instructions.html.erb (4.1ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 232.9ms
+
+Sent mail to abc+1@example.com (8.7ms)
+Date: Mon, 20 Nov 2017 16:06:16 +0500
+From: sehrnadeem91@gmail.com
+Reply-To: sehrnadeem91@gmail.com
+To: abc+1@example.com
+Message-ID: <5a12b728848d5_257f3fa7b94191a0846e8@sehr-Inspiron-5567.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome abc+1@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=y-qGj-je4wynZm-2yVur">Confirm my account</a></p>
+
+  [1m[36m (96.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/waiters
+Completed 302 Found in 579ms (ActiveRecord: 97.9ms)
+
+
+Started GET "/waiters" for 127.0.0.1 at 2017-11-20 16:06:16 +0500
+Processing by WaitersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`role_id` = 2[0m
+  Rendered waiters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user/1/orders" for 127.0.0.1 at 2017-11-20 16:06:20 +0500
+Processing by OrdersController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT `orders`.* FROM `orders`
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered orders/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 35ms (Views: 24.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/waiters" for 127.0.0.1 at 2017-11-20 16:06:21 +0500
+Processing by WaitersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`role_id` = 2[0m
+  Rendered waiters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.7ms)
