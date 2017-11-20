@@ -16,11 +16,12 @@ class OrdersController < ApplicationController
   end
 
   def create                #POST   /user/:user_id/orders
+    #binding.pry
     if current_user.admin?
       @order.user = current_user
     end
     if @order.save
-      #binding.pry
+
       respond_to do |format|
         format.html { redirect_to user_order_path(@user, @order), notice: 'Order successfully created.' }
       end
