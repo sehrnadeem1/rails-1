@@ -1,0 +1,42 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center" id="myModalLabel">Add New Order Item</h4>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+      <%= form_for [@order, @order_item], remote: true do |f| %>
+
+        <% if @order_item.errors.any? %>
+          <div id="error_explanation">
+           <h3><%= pluralize(@order_item.errors.count, "error") %> prevented this order item from being saved:</h3>
+            <ul>
+              <% @order_item.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <p>
+          <%= f.label :item_id %><br>
+          <%= f.collection_select :item_id, @items, :id, :name %>
+        </p>
+
+        <p>
+          <%= f.label :quantity %><br>
+          <%= f.number_field :quantity, input_html: { min: '0'} %>
+        </p>
+
+        <p>
+          <%= f.submit %>
+        </p>
+        <% end %>
+
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    </div>
+  </div>
+</div>

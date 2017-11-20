@@ -1,0 +1,34 @@
+<h2 class="text-center">Orders</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>Staff email</th>
+    <th>Order Description</th>
+    <th>Order Status</th>
+    <th>Time of Delivery</th>
+    <th colspan="4"></th>
+  </tr>
+
+  <% @orders.each do |order| %>
+  <% if order.user %>
+    <tr>
+      <td><%= order.user.email %></td>
+      <td><%= order.description %></td>
+      <td><%= order.status %></td>
+      <td><%= order.delivery_time %></td>
+      <td> <%= link_to 'Show', user_order_path(order.user, order) %> </td>
+      <% if can? :manage, Order %>
+        <td> <%= link_to 'Display Order Items', order_order_items_path(order) %> </td>
+        <td> <%= link_to 'Edit', edit_user_order_path(order.user, order) %> </td>
+        <td> <%= link_to 'Delete', [order.user, order],
+                 method: :delete,
+                 data: {confirm: 'Are you sure you want to delete this order?' } %> </td>
+      <% end %>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<% if can? :manage, Order %>
+  <div class="text-center"><%= link_to 'New order', new_user_order_path, class: 'btn btn-default'%></div>
+<% end %>

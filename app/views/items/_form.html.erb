@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-8">
+
+  <%= form_for @item do |f| %>
+    <% if @item.errors.any? %>
+      <div id="error_explanation">
+        <h3>
+          <%= pluralize(@item.errors.count, "error") %> prevented this item from being saved:
+        </h3>
+        <ul>
+          <% @item.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: 'form-control', required: true %>
+      </p>
+
+      <p>
+        <%= f.label :quantity %><br>
+        <%= f.number_field :quantity, class: 'form-control', input_html: { min: '0'} %>
+      </p>
+
+      <p>
+        <%= f.label :price %><br>
+        <%= f.number_field :price, class: 'form-control', input_html: { min: '0'} %>
+      </p>
+
+      <p>
+        <div class="text-center"><%= f.submit "Submit", class: 'btn btn-default' %></div>
+      </p>
+
+    </div>
+  <% end %>
+
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>

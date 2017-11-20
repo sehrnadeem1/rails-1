@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-8">
+
+  <%= form_for ([@user, @order]) do |f| %>
+
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <h3>
+          <%= pluralize(@order.errors.count, "error") %> prevented this order from being saved:
+        </h3>
+        <ul>
+          <% @order.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <p>
+        <%= f.label :description %><br>
+        <%= f.text_field :description, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label :status %><br>
+        <%= f.select :status, options_for_select([['Pending','Pending'],['In progress','In progress'],['Compeleted','Compeleted']]), {}, {class: 'form-control'} %>
+      </p>
+
+      <p>
+        <%= f.label :delivery_time %><br>
+        <%= f.datetime_select :delivery_time, :ampm => true, class: 'form-control' %>
+      </p>
+      <br>
+      <p>
+        <div class="text-center"><%= f.submit "Submit", class: 'btn btn-default'%></div>
+      </p>
+    </div>
+  <% end %>
+</div>
+<div class="col-lg-2">
+</div>
+
+</div>
