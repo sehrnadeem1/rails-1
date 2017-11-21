@@ -3,20 +3,20 @@
   </div>
   <div class="col-lg-8">
 
-  <h2 class="text-center">Edit Order Item</h2>
+    <h2 class="text-center">Edit Order Item</h2>
 
 
-  <%= form_for [@order, @order_item] do |f| %>
+    <%= form_for [@order, @order_item] do |f| %>
 
     <% if @order_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order_item.errors.count, "error") %> prevented this order item from being saved:</h2>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order_item.errors.count, "error") %> prevented this order item from being saved:</h2>
         <ul>
-        <% @order_item.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
+          <% @order_item.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
         </ul>
-    </div>
+      </div>
     <% end %>
     <div class="form-group">
       <p>
@@ -32,7 +32,8 @@
       <p>
         <div class="text-center"><%= f.submit "Edit Order Item", class: 'btn btn-default' %></div>
       </p>
-      <% end %>
+
+     <% end %>
     </div>
 
   </div>

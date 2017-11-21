@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
   load_and_authorize_resource
 
-  def create                #POST /items/:id
+  #POST /items/:id
+  def create
     if @item.save
       respond_to do |format|
-        format.html { redirect_to @item, notice: 'Item successfully added.' }
+        flash[:notice] = 'Item successfully added.'
+        format.html { redirect_to @item }
       end
     else
       flash.now[:alert] = 'Item could not be created.'
@@ -14,10 +16,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def update                #PUT /items/:id
+  #PUT /items/:id
+  def update
     if @item.update(item_params)
       respond_to do |format|
-        format.html { redirect_to @item, notice: 'Item successfully updated.' }
+        flash[:notice] = 'Item successfully updated.'
+        format.html { redirect_to @item }
       end
     else
       flash.now[:alert] = 'Item could not be updated.'
@@ -27,14 +31,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy               #DELETE /items/:id
+  #DELETE /items/:id
+  def destroy
     if @item.destroy
       flash[:notice] = 'Item successfully deleted'
     else
       flash[:alert] = 'Item could not be deleted'
     end
     respond_to do |format|
-        format.html { redirect_to items_path }
+      format.html { redirect_to items_path }
     end
   end
 

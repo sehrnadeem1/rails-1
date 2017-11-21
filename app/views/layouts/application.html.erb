@@ -8,7 +8,6 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
   <%= stylesheet_link_tag    'application', media: 'all' %>
 
   <%= javascript_include_tag 'application' %>
@@ -19,16 +18,16 @@
 
 
 <% if user_signed_in? %>
-<div class="pull-right">
-  <%= current_user.name %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
-</div>
-<div class="btn-group">
+  <div class="pull-right">
+    <%= current_user.name %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
+  </div>
+  <div class="btn-group">
     <%= link_to 'Items', items_path, class: 'btn btn-default' %>
     <%= link_to 'Orders', user_orders_path(current_user), class: 'btn btn-default' %>
-  <% if current_user.admin? %>
-    <%= link_to 'Waiters', waiters_path, class: 'btn btn-default' %>
-  <% end %>
+    <% if current_user.admin? %>
+      <%= link_to 'Waiters', waiters_path, class: 'btn btn-default' %>
+    <% end %>
 <% else %>
   <%= link_to 'Login', new_user_session_path, class: 'btn btn-default' %>
 <% end %>

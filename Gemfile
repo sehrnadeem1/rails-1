@@ -25,9 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4.0'
 
-gem 'pry'
+gem 'pry', '0.3.6'
 
-gem 'cancan'
+gem 'cancan', '1.6.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

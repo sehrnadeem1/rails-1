@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  enum role_id: {"admin"=>1, "waiter"=>2}
+  enum role_id: { "admin" => 1, "waiter" => 2 }
 
   has_many :orders, dependent: :nullify
 
