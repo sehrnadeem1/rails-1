@@ -7,4 +7,6 @@ class Item < ActiveRecord::Base
   validates :name, presence: true, length: { maximum:255 }
 
   has_many :order_items
+
+  scope :active, -> { where(active: true) }
 end

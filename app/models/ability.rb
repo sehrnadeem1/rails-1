@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new
     if user.admin?
-      can :manage, Item, { active: true }
+      can :manage, Item
       can :manage, Order
       can :manage, OrderItem
     else

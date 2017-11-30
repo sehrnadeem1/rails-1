@@ -19,10 +19,14 @@
 
       <div class="field">
         <%= f.label :item_image %><br>
+        <% if @item.persisted? %>
+          <div class=""><%=  image_tag @item.item_image.url(:thumb) %></div><br>
+          <% submit_btn_text = 'Update Item' %>
+        <% else %>
+          <% submit_btn_text = 'Create Item' %>
+        <% end %>
         <%= f.file_field :item_image %>
       </div>
-
-      <% submit_btn_text = @item.persisted? ? 'Update Item' : 'Create Item' %>
 
       <div class="row">
         <div class="col-lg-6"><div class="text-left"><%= f.submit submit_btn_text, class: 'btn btn-primary' %></div></div>

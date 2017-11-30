@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :parse_datetime, only: [:create, :update]
   load_and_authorize_resource :order
 
-
   #GET /user/:user_id/orders
   def index
     if params[:search_field].present? && params[:search_value].present?
@@ -12,7 +11,7 @@ class OrdersController < ApplicationController
         @orders = Order.where(status: params[:search_value])
       end
     end
-    @orders = @orders.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @orders = @orders.order(created_at: :desc).paginate(page: params[:page], per_page: LISTING_PAGINATION_SIZE)
     respond_to do |format|
       format.html
     end
@@ -20,33 +19,41 @@ class OrdersController < ApplicationController
 
   #POST /user/:user_id/orders
   def create
+    success = false
     @order.user = current_user
     if @order.save
-      respond_to do |format|
-        flash[:notice] = I18n.t(:order_create_success)
-        format.html do
-         redirect_to user_order_path(current_user, @order)
-       end
-      end
+      success = true
+      flash[:notice] = I18n.t(:order_create_success)
     else
       flash.now[:alert] = I18n.t(:order_create_fail, error: @order.errors.full_messages.to_sentence)
-      respond_to do |format|
-        format.html { render 'new' }
+    end
+    respond_to do |format|
+      format.html do
+        if success
+          redirect_to user_order_path(current_user, @order)
+        else
+          render 'new'
+        end
       end
     end
   end
 
   #PUT /user/:user_id/orders/:id
   def update
+    success = false
     if @order.update(order_params)
-      respond_to do |format|
-        flash[:notice] = I18n.t(:order_update_success)
-        format.html { redirect_to user_order_path(current_user, @order) }
-      end
+      success = true
+      flash[:notice] = I18n.t(:order_update_success)
     else
       flash.now[:alert] = I18n.t(:order_update_fail, error: @order.errors.full_messages.to_sentence)
-      respond_to do |format|
-        format.html { render 'edit' }
+    end
+    respond_to do |format|
+      format.html do
+        if success
+          redirect_to user_order_path(current_user, @order)
+        else
+          render 'edit'
+        end
       end
     end
   end
@@ -63,7 +70,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def show_search_form
+  def search
     @search_field = params[:search_field]
     @values = ''
     if @search_field == 'waiter'

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :orders, except: :index
   end
   resources :orders, only: :index
-  get 'orders/show_search_form', to: 'orders#show_search_form'
+  get 'orders/search', to: 'orders#search'
 
   resources :order do
     resources :order_items

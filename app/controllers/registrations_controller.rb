@@ -12,16 +12,21 @@ skip_before_filter :require_no_authentication, only: [:new, :create]
 
   # POST /resource
   def create
+    success = false
     @user = User.new(configure_sign_up_params)
     if @user.save
+      success = true
       flash[:notice] = I18n.t(:waiter_create_success)
-      respond_to do |format|
-        format.html { redirect_to waiters_path }
-      end
     else
       flash[:alert] = I18n.t(:waiter_create_fail, error: @user.errors.full_messages.to_sentence)
-      respond_to do |format|
-        format.html { render 'new' }
+    end
+    respond_to do |format|
+      format.html do
+        if success
+          redirect_to waiters_path
+        else
+          render 'new'
+        end
       end
     end
   end

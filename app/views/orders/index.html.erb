@@ -8,11 +8,11 @@
           <div class="text-left">
             <%= select_tag(
                 'search_field',
-                options_for_select([['Search by Waiter', 'waiter'],['Search by Status','status']]),
+                options_for_select(search_options),
                 prompt: "Search Orders",
                 class: 'form-control',
                 id: 'search_dropdown',
-                data: { remote: true, url: 'orders/show_search_form', method: 'get' }) %>
+                data: { remote: true, url: 'orders/search', method: 'get' }) %>
           </div>
         </div>
         <div class="col-lg-8"><h2 class="text-center">Orders</h2></div>
