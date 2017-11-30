@@ -1,0 +1,36 @@
+<%= form_for [current_user, @order] do |f| %>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label :status %><br>
+      <%= f.select :status, options_for_select(Order::STATUS), {}, { class: 'form-control' } %>
+    </div>
+    <div class="field">
+      <%= f.label :delivery_time %><br>
+
+
+      <div class='input-group date datepicker' id='datetimepicker1'>
+        <%= f.text_field :delivery_time, hide_label: true, required: true, class: 'form-control' %>
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+
+    </div>
+    <br>
+
+    <% txt = @order.persisted? ? 'Update Order' : 'Create Order' %>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="text-left"><%= f.submit txt, class: 'btn btn-primary' %></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="text-right"><%= link_to 'Cancel', orders_path, class: 'btn btn-default' %></div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,57 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  order_create_success: "Order successfully created."
+  order_create_fail: "Order could not be created because: %{error}."
+  order_update_success: "Order successfully updated."
+  order_update_fail: "Order could not be updated because: %{error}."
+  order_delete_success: "Order successfully deleted."
+  order_delete_fail: "Order could not be deleted because: %{error}."
+  order_delivery_time_error: "can't be earlier than the present time"
+
+  order_item_create_success: "Order item successfully created."
+  order_item_create_fail: "Order item could not be created because: %{error}"
+  order_item_update_success: "Order item successfully updated."
+  order_item_update_fail: "Order item could not be updated because: %{error}."
+  order_item_quantity_error: "cannot be greater than item stock quantity."
+  order_item_update_quantity_error: 'Order items could not be updated, not enough items in stock.'
+  order_item_delete_success: "Order item successfully deleted."
+  order_item_delete_fail: "Order item could not be deleted because: %{error}."
+  order_item_destroy_status_error: "Order items of completed orders cannot be deleted."
+
+  item_create_success: "Item successfully created."
+  item_create_fail: "Item could not be created because: %{error}."
+  item_update_success: 'Item successfully updated.'
+  item_update_fail: "Item could not be updated because: %{error}."
+  item_delete_success: 'Item successfully deleted.'
+  item_delete_fail: "Item could not be deleted because: %{error}."
+  item_quantity_error: 'must be greater than or equal to 0'
+  item_price_error: 'must be greater than 0'
+
+  waiter_create_success: "Waiter successfully created."
+  waiter_create_fail: "Waiter could not be created because: %{error}."
+  waiter_update_success: 'Waiter successfully updated.'
+  waiter_update_fail: "Waiter could not be updated because: %{error}."
+  waiter_delete_success: 'Waiter successfully deleted.'
+  waiter_delete_fail: "Waiter could not be deleted because: %{error}."

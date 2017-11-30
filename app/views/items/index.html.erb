@@ -1,0 +1,56 @@
+<%= render 'shared/messages' %>
+
+<table class="table table-bordered">
+  <tr>
+     <th colspan="6" id="table-heading">
+      <div class="row">
+        <div class="col-lg-7"><h2 class="text-right">Menu</h2></div>
+        <% if can? :create, Item %>
+          <div class="col-lg-5">
+            <div class="text-right" id="add-btn"><%= link_to '+ New Item', new_item_path, class: 'btn btn-primary' %></div>
+          </div>
+        <% end %>
+
+      </div>
+    </th>
+  </tr>
+
+  <% if @items.empty? %>
+    <tr>
+      <td>No Items to Display</td>
+    </tr>
+  <% end %>
+  <tr>
+    <th id="image-col">Item Image</th>
+    <th>Item Name</th>
+    <th>Quantity in Stock</th>
+    <th>Price</th>
+    <th colspan="2">Actions</th>
+  </tr>
+
+  <% @items.each do |item| %>
+
+    <tr>
+      <td id="image-col"><%= image_tag item.item_image.url(:thumb) %></td>
+      <td><%= link_to item.name, item_path(item) %></td>
+      <td><%= item.quantity %></td>
+      <td><%= number_to_currency(item.price, unit: "Rs ") %></td>
+      <% if can? :update, item %>
+        <td class="text-center"><%= link_to 'Edit', edit_item_path(item) %></td>
+      <% end %>
+      <% if can? :destroy, item %>
+        <td class="text-center"><%= link_to 'Delete', item_path(item),
+                                    method: :delete,
+                                    data: {confirm: 'Are you sure you want to delete this item?' } %></td>
+      <% end %>
+    </tr>
+
+  <% end %>
+</table>
+
+<div class="text-center">
+  <div class="pagination">
+    <%= will_paginate @items, container: false %>
+  </div>
+</div>
+<br>

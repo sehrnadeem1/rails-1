@@ -1,0 +1,1 @@
+admin = User.create({name: 'Sehr', email: 'sehrnadeem91@gmail.com', encrypted_password: 'password', password: 'password', role: 1})

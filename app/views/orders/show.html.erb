@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-8">
+   <%= render 'shared/messages' %>
+
+    <br>
+    <table class="table table-bordered">
+      <tr>
+        <td><strong>Order Description: </strong></td>
+        <td><%= @order.description %></td>
+      </tr>
+      <tr>
+        <td><strong>Order Status: </strong></td>
+        <td><%= @order.status %></td>
+      </tr>
+      <tr>
+        <td><strong>Order Delivery Time:</strong> </td>
+        <td><%= @order.delivery_time.to_s(:long) %></td>
+      </tr>
+    </table>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="text-left"><%= link_to 'Start Adding Order Items', order_order_items_path(@order), class: 'btn btn-primary' %></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="text-right"><%= link_to 'Back to Order Listing', orders_path, class: 'btn btn-default' %></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>
+
+
+
