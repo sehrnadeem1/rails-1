@@ -1,5 +1,5 @@
 module OrdersHelper
-  def status_dropdown
-    [['Pending','Pending'],['In progress','In progress'],['Compeleted','Compeleted']]
+  def search_options
+    [['Search by Waiter', 'waiter'],['Search by Status', 'status']]
   end
 end

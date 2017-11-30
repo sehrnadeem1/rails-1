@@ -31,6 +31,8 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+  config.serve_static_assets = true
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
@@ -43,15 +45,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
-  # config.action_mailer.smtp_settings = {
-  #   address:       'smtp.gmail.com',
-  #   port:          '587',
-  #   domain:         "mail.gmail.com",
-  #   user_name:      "sehrnadeem91@gmail.com",
-  #   password:       "30february",
-  #   authentication: :plain
-  # }
+  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
 
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 
 end

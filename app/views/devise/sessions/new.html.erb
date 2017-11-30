@@ -1,37 +1,44 @@
 <div class="row">
-  <div class="col-lg-2">
+  <div class="col-lg-3">
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-6">
 
-    <h2 class="text-center">Log in</h2>
+    <%= render 'shared/messages' %>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-group">
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><h2 class="text-center">Log in</h2></div>
+
+      <div class="panel-body">
+        </br>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="actions">
+            <div class="text-center"><%= f.submit "Log in", class: 'btn btn-primary' %></div>
+          </div>
+        <% end %>
       </div>
-
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+        <%= render "devise/shared/links" %>
       </div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
-
-      <div class="actions">
-        <%= f.submit "Log in", class: 'btn btn-default' %>
-      </div>
-    <% end %>
     </div>
-    <%= render "devise/shared/links" %>
+  </div>
+  <div class="col-lg-3">
+  </div>
 
-  </div>
-  <div class="col-lg-2">
-  </div>
 </div>

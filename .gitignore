@@ -9,6 +9,7 @@
 
 # Ignore all logfiles and tempfiles.
 !/log/.keep
-/tmp
-tmp/
+tmp/*
+.tmp
 /log
+public/
