@@ -1,46 +1,34 @@
-<div class="row">
-  <div class="col-lg-2">
-  </div>
-  <div class="col-lg-8">
-
-  <%= form_for @item do |f| %>
-    <% if @item.errors.any? %>
-      <div id="error_explanation">
-        <h3>
-          <%= pluralize(@item.errors.count, "error") %> prevented this item from being saved:
-        </h3>
-        <ul>
-          <% @item.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+<div class="panel-body">
+  <%= form_for @item, html: { multipart: true } do |f| %>
 
     <div class="form-group">
-      <p>
+      <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name, class: 'form-control', required: true %>
-      </p>
+      </div>
 
-      <p>
+      <div class="field">
         <%= f.label :quantity %><br>
-        <%= f.number_field :quantity, class: 'form-control', input_html: { min: '0'} %>
-      </p>
+        <%= f.number_field :quantity, class: 'form-control', min: '0' %>
+      </div>
 
-      <p>
+      <div class="field">
         <%= f.label :price %><br>
-        <%= f.number_field :price, class: 'form-control', input_html: { min: '0'} %>
-      </p>
+        <%= f.number_field :price, class: 'form-control', step: :any, min: '1' %>
+      </div>
 
-      <p>
-        <div class="text-center"><%= f.submit "Submit", class: 'btn btn-default' %></div>
-      </p>
+      <div class="field">
+        <%= f.label :item_image %><br>
+        <%= f.file_field :item_image %>
+      </div>
+
+      <% submit_btn_text = @item.persisted? ? 'Update Item' : 'Create Item' %>
+
+      <div class="row">
+        <div class="col-lg-6"><div class="text-left"><%= f.submit submit_btn_text, class: 'btn btn-primary' %></div></div>
+        <div class="col-lg-6"><div class="text-right"><%= link_to 'Cancel', items_path, class: 'btn btn-default' %></div></div>
+      </div>
 
     </div>
   <% end %>
-
-  </div>
-  <div class="col-lg-2">
-  </div>
 </div>

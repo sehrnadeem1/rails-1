@@ -10,7 +10,91 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap
  *= require bootstrap.min.css
+ *= require jquery-ui
+ *= require bootstrap-datetimepicker
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+#heading-text {
+  color: #f9fbfc;
+  font-style: italic;
+}
+
+#username {
+  color: #d6d6d6;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.jumbotron {
+  margin-top: 0px;
+  height: 100vh;
+  margin-bottom: 0px;
+}
+
+.container {
+  margin-top: 0px;
+}
+.panel {
+  border-radius: 12px;
+}
+
+.panel-body {
+  padding-top: 30px;
+  padding-right: 70px;
+  padding-bottom: 50px;
+  padding-left: 70px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.odd-row {
+  border-color: 'white';
+}
+
+#heading {
+  display:inline-block;
+  margin-left:45%;
+}
+
+#add_btn {
+  display:inline-block;
+  margin-left:400px;
+  margin-bottom: 10px;
+}
+
+#table-heading {
+  background-color: #d9dbdd;
+}
+
+#add-btn {
+  margin-top: 15px;
+  margin-bottom: 14px;
+}
+
+#image-col {
+  width: 10px;
+}
+
+#total-price {
+  width: 197px;
+}
+
+#order-item-name {
+  width: 350px;
+  margin: 0px;
+}
+
+#total_price_table {
+  margin-right: 0px;
+  width: 92px;
+}

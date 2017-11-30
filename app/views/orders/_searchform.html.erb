@@ -1,0 +1,33 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center" id="myModalLabel">Add New Order Item</h4>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+
+          <%= form_tag({ controller: "orders", action: "index" }, method: "get",) do %>
+            <%= label_tag(:q, "Search orders by #{@search_field}: ") %>
+
+            <%= hidden_field_tag 'search_field', "#{@search_field}" %>
+
+            <% if @search_field == 'waiter' %>
+              <%= select_tag "search_value", options_from_collection_for_select(@values, "id", "name"), { class: 'form-control' } %>
+            <% end %>
+            <% if @search_field == 'status' %>
+              <%= select_tag "search_value", options_for_select(@values), { class: 'form-control' } %>
+            <% end %>
+
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="text-left"><%= submit_tag "Search" , class: 'btn btn-primary' %></div>
+              </div>
+              <div class="col-lg-6"><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

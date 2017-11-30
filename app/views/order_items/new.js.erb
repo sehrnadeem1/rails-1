@@ -1,2 +1,3 @@
-$("#modal_form").html("<%= escape_javascript (render 'form') %>");
+$('#message').hide();
+$("#modal_form").html("<%= j (render 'form') %>");
 $("#modal_form").modal('show');

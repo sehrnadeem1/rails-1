@@ -1,15 +1,24 @@
 class ItemsController < ApplicationController
   load_and_authorize_resource
 
-  #POST /items/:id
+  #GET /items
+  def index
+    @items = @items.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    @items = @items.where(active: true)
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  #POST /items/
   def create
     if @item.save
       respond_to do |format|
-        flash[:notice] = 'Item successfully added.'
+        flash[:notice] = I18n.t(:item_create_success)
         format.html { redirect_to @item }
       end
     else
-      flash.now[:alert] = 'Item could not be created.'
+      flash.now[:alert] = I18n.t(:item_create_fail, error: @item.errors.full_messages.to_sentence)
       respond_to do |format|
         format.html { render 'new' }
       end
@@ -20,11 +29,11 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       respond_to do |format|
-        flash[:notice] = 'Item successfully updated.'
+        flash[:notice] = I18n.t(:item_update_success)
         format.html { redirect_to @item }
       end
     else
-      flash.now[:alert] = 'Item could not be updated.'
+      flash.now[:alert] = I18n.t(:item_update_fail, error: @item.errors.full_messages.to_sentence)
       respond_to do |format|
         format.html { render 'edit' }
       end
@@ -33,10 +42,25 @@ class ItemsController < ApplicationController
 
   #DELETE /items/:id
   def destroy
-    if @item.destroy
-      flash[:notice] = 'Item successfully deleted'
+    item_found, item_deleted = false, false
+    orders = Order.all
+    orders.each do |order|
+      orderItems = order.order_items
+      orderItems.each do |orderItem|
+        item_found = true if orderItem.item == @item
+      end
+    end
+
+    if item_found
+      item_deleted = true if @item.update(active: 0)
     else
-      flash[:alert] = 'Item could not be deleted'
+      item_deleted = true if @item.destroy
+    end
+
+    if item_deleted
+      flash[:notice] = I18n.t(:item_delete_success)
+    else
+      flash[:alert] = I18n.t(:item_delete_fail, error: @item.errors.full_messages.to_sentence)
     end
     respond_to do |format|
       format.html { redirect_to items_path }
@@ -45,6 +69,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :quantity, :price)
+    params.require(:item).permit(:name, :quantity, :price, :item_image)
   end
 end

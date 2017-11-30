@@ -1,1 +1,12 @@
-window.location.reload();
+$('#order_items').append('<tr><%= j render @order_item %></tr>');
+$("#total_price_table").html('<td><strong><%= number_to_currency(calculate_total_price(@order), unit: "Rs ") %></strong></td>');
+$('#modal_form').modal('hide');
+$('#message').html('Order item successfully updated.');
+var cssClass = $('#message').attr('class');
+if (cssClass == "alert alert-danger")
+{
+  $('#message').removeClass("alert alert-danger");
+}
+$('#message').addClass("alert alert-success");
+$('#message').show();
+$('#empty_notice').hide();

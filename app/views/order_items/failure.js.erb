@@ -1,0 +1,4 @@
+$('#modal_form').modal('hide');
+$('#message').html('<%= I18n.t(:order_item_create_fail, error: @order_item.errors.full_messages.to_sentence) %>');
+$('#message').addClass("alert alert-danger");
+$('#message').show();

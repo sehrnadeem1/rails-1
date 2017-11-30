@@ -14,12 +14,15 @@ skip_before_filter :require_no_authentication, only: [:new, :create]
   def create
     @user = User.new(configure_sign_up_params)
     if @user.save
-      flash[:notice] = "Waiter successfully created."
+      flash[:notice] = I18n.t(:waiter_create_success)
+      respond_to do |format|
+        format.html { redirect_to waiters_path }
+      end
     else
-      flash[:alert] = "Waiter could not be created beacuse: #{@user.errors.full_messages}."
-    end
-    respond_to do |format|
-      format.html { redirect_to waiters_path }
+      flash[:alert] = I18n.t(:waiter_create_fail, error: @user.errors.full_messages.to_sentence)
+      respond_to do |format|
+        format.html { render 'new' }
+      end
     end
   end
 

@@ -5,37 +5,25 @@
     </div>
     <div class="modal-body">
       <div class="container">
-      <%= form_for [@order, @order_item], remote: true do |f| %>
+        <%= form_for [@order, @order_item], remote: true do |f| %>
+          <p>
+            <%= f.label :item_id %><br>
+            <%= f.collection_select :item_id, @items, :id, :name %>
+          </p>
 
-        <% if @order_item.errors.any? %>
-          <div id="error_explanation">
-           <h3><%= pluralize(@order_item.errors.count, "error") %> prevented this order item from being saved:</h3>
-            <ul>
-              <% @order_item.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
+          <p>
+            <%= f.label :quantity %><br>
+            <%= f.number_field :quantity, min: '1' %>
+          </p>
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="text-left"><%= f.submit "Create Order Item", class: 'btn btn-primary' %></div>
+              </div>
+              <div class="col-lg-6"><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></div>
+            </div>
           </div>
         <% end %>
-
-        <p>
-          <%= f.label :item_id %><br>
-          <%= f.collection_select :item_id, @items, :id, :name %>
-        </p>
-
-        <p>
-          <%= f.label :quantity %><br>
-          <%= f.number_field :quantity, input_html: { min: '0'} %>
-        </p>
-
-        <p>
-          <%= f.submit %>
-        </p>
-        <% end %>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
