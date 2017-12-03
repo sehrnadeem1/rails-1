@@ -1,5 +1,5 @@
 <tr>
-  <td id="image-col"><%= image_tag order_item.item.item_image.url(:thumb) %></td>
+  <td id="image-col"><%= image_tag order_item.item.image.url(:thumb) %></td>
   <td><%= link_to order_item.item.name, order_order_item_path(order_item.order, order_item) %></td>
   <td><%= order_item.quantity %></td>
   <td><%= number_to_currency(order_item.item.price, unit: 'Rs ') %></td>

@@ -6,17 +6,17 @@
     <div class="modal-body">
       <div class="container">
 
-          <%= form_tag({ controller: "orders", action: "index" }, method: "get",) do %>
-            <%= label_tag(:q, "Search orders by #{@search_field}: ") %>
+          <%= form_tag({ controller: "orders", action: "index" }, method: "get") do %>
+            <%= label_tag(:q, "Search orders by #{params[:search_field]}: ") %>
 
-            <%= hidden_field_tag 'search_field', "#{@search_field}" %>
+            <%= hidden_field_tag 'search_field', "#{params[:search_field]}" %>
 
-            <% if @search_field == 'waiter' %>
+            <% if params[:search_field] == 'status' %>
+              <%= select_tag "search_value", options_for_select(@values), { class: 'form-control' } %>
+            <% else %>
               <%= select_tag "search_value", options_from_collection_for_select(@values, "id", "name"), { class: 'form-control' } %>
             <% end %>
-            <% if @search_field == 'status' %>
-              <%= select_tag "search_value", options_for_select(@values), { class: 'form-control' } %>
-            <% end %>
+
 
           <div class="modal-footer">
             <div class="row">

@@ -55,3 +55,4 @@ en:
   waiter_update_fail: "Waiter could not be updated because: %{error}."
   waiter_delete_success: 'Waiter successfully deleted.'
   waiter_delete_fail: "Waiter could not be deleted because: %{error}."
+  waiter_delete_orders_error: "This waiter has placed orders which need to be transfered to someone else first"

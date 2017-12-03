@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
 
   #GET /items
   def index
+    @items = Item.active
     @items = @items.order(created_at: :desc).paginate(page: params[:page], per_page: LISTING_PAGINATION_SIZE)
-    @items = @items.where(active: true)
     respond_to do |format|
       format.html
     end
@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
   #POST /items/
   def create
     success = false
-    if @item.save
-      success = true
+    if success = @item.save
       flash[:notice] = I18n.t(:item_create_success)
     else
       flash.now[:alert] = I18n.t(:item_create_fail, error: @item.errors.full_messages.to_sentence)
@@ -33,8 +32,7 @@ class ItemsController < ApplicationController
   #PUT /items/:id
   def update
     success = false
-    if @item.update(item_params)
-      success = true
+    if success = @item.update(item_params)
       flash[:notice] = I18n.t(:item_update_success)
     else
       flash.now[:alert] = I18n.t(:item_update_fail, error: @item.errors.full_messages.to_sentence)
@@ -52,20 +50,12 @@ class ItemsController < ApplicationController
 
   #DELETE /items/:id
   def destroy
-    item_found, item_deleted = false, false
-    item_found = true if OrderItem.joins(:item).where(items: {name: @item.name}).any?
-
-    if item_found
-      item_deleted = true if @item.update(active: false)
-    else
-      item_deleted = true if @item.destroy
-    end
-
-    if item_deleted
+    if @item.destroy || @item.update(active: false)
       flash[:notice] = I18n.t(:item_delete_success)
     else
-      flash[:alert] = I18n.t(:item_delete_fail, error: @item.errors.full_messages.to_sentence)
+      flash[:alert]  = @item.errors.full_messages
     end
+
     respond_to do |format|
       format.html { redirect_to items_path }
     end
@@ -73,6 +63,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :quantity, :price, :item_image)
+    params.require(:item).permit(:name, :quantity, :price, :image)
   end
 end

@@ -14,8 +14,7 @@ skip_before_filter :require_no_authentication, only: [:new, :create]
   def create
     success = false
     @user = User.new(configure_sign_up_params)
-    if @user.save
-      success = true
+    if success = @user.save
       flash[:notice] = I18n.t(:waiter_create_success)
     else
       flash[:alert] = I18n.t(:waiter_create_fail, error: @user.errors.full_messages.to_sentence)

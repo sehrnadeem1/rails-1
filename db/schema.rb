@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123062849) do
+ActiveRecord::Schema.define(version: 20171203154725) do
 
   create_table "items", force: :cascade do |t|
-    t.string   "name",                    limit: 255
-    t.float    "price",                   limit: 24
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
-    t.integer  "quantity",                limit: 4
-    t.boolean  "active",                  limit: 1,   default: true
-    t.string   "item_image_file_name",    limit: 255
-    t.string   "item_image_content_type", limit: 255
-    t.integer  "item_image_file_size",    limit: 4
-    t.datetime "item_image_updated_at"
+    t.string   "name",               limit: 255
+    t.decimal  "price",                          precision: 10
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+    t.integer  "quantity",           limit: 4
+    t.boolean  "active",             limit: 1,                  default: true
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "order_items", force: :cascade do |t|

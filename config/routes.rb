@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     resources :orders, except: :index
   end
   resources :orders, only: :index
-  get 'orders/search', to: 'orders#search'
+  resources :orders do
+    collection do
+      get 'search'
+    end
+  end
+  #get 'orders/search', to: 'orders#search'
 
   resources :order do
     resources :order_items

@@ -32,9 +32,8 @@ class OrderItemsController < ApplicationController
     create_success = false
     if @order_item.item.quantity >= @order_item.quantity
       OrderItem.transaction do
-        if @order_item.save
+        if create_success = @order_item.save
           @order_item.item.update(quantity: (@order_item.item.quantity - @order_item.quantity))
-          create_success = true
         end
       end
     else
@@ -53,8 +52,7 @@ class OrderItemsController < ApplicationController
     success = false
     OrderItem.transaction do
       if @order_item.check_updated_quantity(params[:order_item][:item_id].to_i, params[:order_item][:quantity].to_i)
-        if @order_item.update(order_item_params)
-          success = true
+        if success = @order_item.update(order_item_params)
           flash[:notice] = I18n.t(:order_item_update_success)
         else
           flash.now[:alert] = I18n.t(:order_item_update_fail, error: @order_item.errors.full_messages.to_sentence)
@@ -76,7 +74,7 @@ class OrderItemsController < ApplicationController
 
   #DELETE /order/:order_id/order_items/:id
   def destroy
-    if @order_item.order.status != 'Completed'
+    if @order_item.order.completed?
       OrderItem.transaction do
         if @order_item.destroy
           flash[:notice] = I18n.t(:order_item_delete_success)

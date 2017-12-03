@@ -5,10 +5,10 @@ class OrdersController < ApplicationController
   #GET /user/:user_id/orders
   def index
     if params[:search_field].present? && params[:search_value].present?
-      if params[:search_field] == 'waiter'
-        @orders = Order.where(user_id: params[:search_value].to_i)
-      elsif params[:search_field] == 'status'
-        @orders = Order.where(status: params[:search_value])
+      if params[:search_field] == 'status'
+        @orders = @orders.where(status: params[:search_value])
+      else
+        @orders = @orders.where(user_id: params[:search_value])
       end
     end
     @orders = @orders.order(created_at: :desc).paginate(page: params[:page], per_page: LISTING_PAGINATION_SIZE)
@@ -21,8 +21,7 @@ class OrdersController < ApplicationController
   def create
     success = false
     @order.user = current_user
-    if @order.save
-      success = true
+    if success = @order.save
       flash[:notice] = I18n.t(:order_create_success)
     else
       flash.now[:alert] = I18n.t(:order_create_fail, error: @order.errors.full_messages.to_sentence)
@@ -41,8 +40,7 @@ class OrdersController < ApplicationController
   #PUT /user/:user_id/orders/:id
   def update
     success = false
-    if @order.update(order_params)
-      success = true
+    if success = @order.update(order_params)
       flash[:notice] = I18n.t(:order_update_success)
     else
       flash.now[:alert] = I18n.t(:order_update_fail, error: @order.errors.full_messages.to_sentence)
@@ -70,13 +68,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  #GET /orders/search
   def search
-    @search_field = params[:search_field]
-    @values = ''
-    if @search_field == 'waiter'
-      @values = User.waiter
-    elsif @search_field == 'status'
+    if params[:search_field] == 'status'
       @values = Order::STATUS
+    else
+      @values = User.all
     end
     respond_to do |format|
       format.js
@@ -89,8 +86,8 @@ class OrdersController < ApplicationController
   end
 
   def parse_datetime
-    if params[:order][:delivery_time].class != DateTime && params[:order][:delivery_time].present?
-      params[:order][:delivery_time] = DateTime.strptime(params[:order][:delivery_time],'%m/%d/%Y %I:%M %p')
+    if params[:order][:delivery_time].present? && params[:order][:delivery_time].class != DateTime
+      params[:order][:delivery_time] = DateTime.strptime(params[:order][:delivery_time],'%m/%d/%Y %I:%M %p').to_time.in_time_zone
     end
   end
 end

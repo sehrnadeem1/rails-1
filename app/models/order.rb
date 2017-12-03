@@ -5,6 +5,10 @@ class Order < ActiveRecord::Base
 
   validate :delivery_time_cannot_be_earlier_than_present, on: :create
 
+  def completed?
+    status == 'Completed' ? true : false
+  end
+
   private
   def delivery_time_cannot_be_earlier_than_present
     if delivery_time.present?

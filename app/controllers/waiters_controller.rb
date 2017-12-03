@@ -3,7 +3,7 @@ class WaitersController < ApplicationController
   #GET /waiters
   def index
     if current_user.admin?
-      @waiters = User.waiter.order(created_at: :desc).paginate(page: params[:page], per_page: LISTING_PAGINATION_SIZE)
+      @waiters = User.all.order(created_at: :desc).paginate(page: params[:page], per_page: LISTING_PAGINATION_SIZE)
        respond_to do |format|
         format.html
       end

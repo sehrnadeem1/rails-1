@@ -8,7 +8,7 @@
       <tr>
         <th colspan="7" id="table-heading">
           <div class="row">
-            <div class="col-lg-7"><h2 class="text-right">Waiters</h2></div>
+            <div class="col-lg-7"><h2 class="text-right">Staff</h2></div>
             <% if current_user.admin? %>
               <div class="col-lg-5">
                 <div class="text-right" id="add-btn"><%= link_to '+ New Waiter', new_user_registration_path, class: 'btn btn-primary' %></div>
@@ -40,7 +40,7 @@
 
     <div class="text-center">
       <div class="pagination">
-      <%= will_paginate @items, container: false %>
+      <%= will_paginate @waiters, container: false %>
     </div>
   </div>
 

@@ -12,7 +12,7 @@
                 prompt: "Search Orders",
                 class: 'form-control',
                 id: 'search_dropdown',
-                data: { remote: true, url: 'orders/search', method: 'get' }) %>
+                data: { remote: true, url: 'orders/search' }) %>
           </div>
         </div>
         <div class="col-lg-8"><h2 class="text-center">Orders</h2></div>
@@ -46,15 +46,15 @@
       <td><%= order.status %></td>
       <td><%= order.delivery_time.to_s(:long) %></td>
       <% if can? :read, order %>
-        <td> <%= link_to 'Show Order', order_order_items_path(order) %> </td>
+        <td><%= link_to 'Show Order', order_order_items_path(order) %></td>
       <% end %>
       <% if can? :update, order %>
-        <td> <%= link_to 'Edit', edit_user_order_path(order.user, order) %> </td>
+        <td><%= link_to 'Edit', edit_user_order_path(order.user, order) %></td>
       <% end %>
       <% if can? :destroy, order %>
-        <td> <%= link_to 'Delete', [order.user, order],
-                 method: :delete,
-                 data: { confirm: 'Are you sure you want to delete this order?' } %> </td>
+        <td><%= link_to 'Delete', [order.user, order],
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this order?' } %></td>
       <% end %>
     </tr>
   <% end %>
